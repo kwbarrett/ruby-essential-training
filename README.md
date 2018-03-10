@@ -1,1 +1,2 @@
 # ruby-essential-training
+These are my exercise files from work done on the Ruby Essential Training course. These ARE NOT originals. Rather, they are my work on the provided exercise files as I go through the training. For the originals visit Lynda.com.
