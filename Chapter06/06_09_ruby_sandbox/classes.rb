@@ -6,8 +6,18 @@ class Animal
   @@species = ['cat', 'cow', 'dog', 'duck', 'horse', 'pig']
   @@current_animals = []
   
-  def self.all_species
+  #reader
+  def self.species
     @@species
+  end
+
+  #writer
+  def self.species=(array=[])
+    @@species = array
+  end
+
+  def self.current_animals
+    @@current_animals
   end
   
   def self.create_with_attributes(noise, color)
@@ -37,7 +47,8 @@ class Animal
   end
 end
 
-puts Animal.all_species.inspect
+Animal.species = ['frog', 'fish']
+puts Animal.species.inspect
 
 animal1 = Animal.new("Moo!", 4, 0)
 animal1.name = "Steve"
