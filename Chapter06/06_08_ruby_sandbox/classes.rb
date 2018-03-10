@@ -2,9 +2,12 @@ class Animal
   attr_accessor :name
   attr_writer :color
   attr_reader :legs, :arms
+
+  @@species = ['cat', 'cow', 'dog', 'duck', 'horse', 'pig']
+  @@current_animals = []
   
   def self.all_species
-    ['cat', 'cow', 'dog', 'duck', 'horse', 'pig']
+    @@species
   end
   
   def self.create_with_attributes(noise, color)
@@ -17,6 +20,7 @@ class Animal
     @noise = noise
     @legs = legs
     @arms = arms
+    @@current_animals << self
     puts "A new animal has been instantiated."
   end
   
@@ -46,3 +50,6 @@ puts animal1.noise
 animal2 = Animal.create_with_attributes("Quack!", "white")
 puts animal2.noise
 puts animal2.color
+
+# This won't work because we don't have class reader/writer methods
+puts Animal.current_animals.inspect
